@@ -24,9 +24,18 @@ $mainFont: "Commissioner", sans-serif;
     border-radius: 33px; 
 }
 
+@mixin section-gen {
+    width: calc(100% - 48px);
+    margin: auto;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
 
 body {
-    background-color: #FFF;
+    background-color: #FAFAFA;
     font-family: $mainFont;
     // height: 100vh;
 }
@@ -113,15 +122,10 @@ p {
     }
 
     .absolute-div--header {
-        width: calc(100% - 48px);
         position: absolute;
-        background-color: #FFFFFF;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-
+        @include section-gen();
         left: 24px;
         bottom: -80%;
-
 
         article {
             position: relative;
@@ -167,10 +171,67 @@ p {
                 display: none;
             }
 
-
         }
 
     }
+
+}
+
+
+
+.section--1 {
+    @include flex-column();
+    @include section-gen();
+    gap: 25px;
+
+    margin: auto;
+    margin-top: 300px;
+    padding: 33px 24px 40px 24px;
+    box-sizing: border-box;
+
+    div {
+        @include flex-column();
+
+        strong {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 9px;
+        }
+
+        span {
+            font-size: 14px;
+            color: #7A7A7A;
+            font-weight: 400;
+        }
+
+        .underline {
+            margin-top: 24px;
+            width: 80px;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    }
+
+
+    .days-left--diagram {
+        width: 100%;
+        height: 12px;
+        border-radius: 33px;
+        background-color: rgba(47, 47, 47, 0.1);
+        position: relative;
+
+        div {
+          width: 80%;
+          height: 100%;
+          position: absolute;
+          background-color: #3CB3AB;  
+          border-radius: 33px;
+
+          left: 0;
+        }
+    }
+
 
 }
 
