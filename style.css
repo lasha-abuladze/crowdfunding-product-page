@@ -1,0 +1,84 @@
+body {
+  background-color: #FFF;
+  font-family: "Commissioner", sans-serif; }
+
+.header {
+  width: 100%;
+  height: 300px;
+  background-image: url(./images/image-hero-mobile.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative; }
+  .header .header-background {
+    width: 100%;
+    height: 130px;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.6;
+    position: absolute;
+    z-index: 0; }
+  .header .navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    padding: 32px 24px 0px 24px;
+    box-sizing: border-box; }
+    .header .navigation .navigation--ul {
+      position: fixed;
+      z-index: 3;
+      width: calc(100% - 48px);
+      background-color: #FFF;
+      left: 24px;
+      top: 88px;
+      border-radius: 8px;
+      transform: translateX(calc(100% + 24px)); }
+      .header .navigation .navigation--ul li {
+        padding: 24px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(47, 47, 47, 0.2); }
+        .header .navigation .navigation--ul li:last-child {
+          border: none; }
+        .header .navigation .navigation--ul li a {
+          font-size: 18px;
+          font-weight: 500;
+          color: #000000; }
+    .header .navigation button {
+      padding: 0;
+      background: none;
+      border: none; }
+  .header .opened-menu--background {
+    width: 100%;
+    height: 200vh;
+    background-color: #000000;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.4;
+    left: 0; }
+
+.open-navigation {
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; }
+
+.close-navigation {
+  animation-name: moveInRight;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes moveInLeft {
+  from {
+    transform: translateX(calc(100% + 24px)); }
+  to {
+    transform: translateX(0px); } }
+
+@keyframes moveInRight {
+  from {
+    transform: translateX(0px); }
+  to {
+    transform: translateX(calc(100% + 24px)); } }
+
+.display-none {
+  display: none; }
