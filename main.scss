@@ -14,11 +14,28 @@ $mainFont: "Commissioner", sans-serif;
     align-items: center;
 }
 
+@mixin button-gen {
+    background-color: #3CB3AB;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFF;
+
+    border: none;
+    border-radius: 33px; 
+}
+
 
 body {
     background-color: #FFF;
     font-family: $mainFont;
     // height: 100vh;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #7A7A7A;
+    line-height: 24px;
 }
 
 .header {
@@ -28,7 +45,6 @@ body {
     background-size: cover;
     background-position: top;
     position: relative;
-
 
     .header-background {
         width: 100%;
@@ -96,8 +112,65 @@ body {
         left: 0;
     }
 
+    .absolute-div--header {
+        width: calc(100% - 48px);
+        position: absolute;
+        background-color: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+
+        left: 24px;
+        bottom: -80%;
 
 
+        article {
+            position: relative;
+            text-align: center;
+            padding: 52px 24px 40px 24px;
+            box-sizing: border-box;
+
+            .logo-mastercraft {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            h1 {
+                font-size: 20px;
+                font-weight: 700;
+                color: #000000;
+
+                span {
+                    display: block;
+                    margin-top: 5px;
+                }
+            }
+
+            p {
+                margin-top: 16px;
+            }
+
+            .btn-bookmark {
+                @include flex-row();
+                justify-content: space-between;
+                margin-top: 24px;
+
+                button {
+                    @include button-gen();
+                    min-width: 214px;
+                    height: 56px;
+                }
+            }
+
+            .bookmark-span {
+                display: none;
+            }
+
+
+        }
+
+    }
 
 }
 

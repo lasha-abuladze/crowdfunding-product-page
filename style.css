@@ -2,6 +2,12 @@ body {
   background-color: #FFF;
   font-family: "Commissioner", sans-serif; }
 
+p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7A7A7A;
+  line-height: 24px; }
+
 .header {
   width: 100%;
   height: 300px;
@@ -57,6 +63,50 @@ body {
     z-index: -1;
     opacity: 0.4;
     left: 0; }
+  .header .absolute-div--header {
+    width: calc(100% - 48px);
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    left: 24px;
+    bottom: -80%; }
+    .header .absolute-div--header article {
+      position: relative;
+      text-align: center;
+      padding: 52px 24px 40px 24px;
+      box-sizing: border-box; }
+      .header .absolute-div--header article .logo-mastercraft {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .header .absolute-div--header article h1 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000000; }
+        .header .absolute-div--header article h1 span {
+          display: block;
+          margin-top: 5px; }
+      .header .absolute-div--header article p {
+        margin-top: 16px; }
+      .header .absolute-div--header article .btn-bookmark {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 24px; }
+        .header .absolute-div--header article .btn-bookmark button {
+          background-color: #3CB3AB;
+          font-size: 16px;
+          font-weight: 700;
+          color: #FFF;
+          border: none;
+          border-radius: 33px;
+          min-width: 214px;
+          height: 56px; }
+      .header .absolute-div--header article .bookmark-span {
+        display: none; }
 
 .open-navigation {
   animation-name: moveInLeft;
