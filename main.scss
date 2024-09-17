@@ -16,7 +16,7 @@ $mainFont: "Commissioner", sans-serif;
 
 @mixin button-gen {
     background-color: #3CB3AB;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: #FFF;
 
@@ -28,7 +28,7 @@ $mainFont: "Commissioner", sans-serif;
     width: calc(100% - 48px);
     margin: auto;
     background-color: #FFF;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     box-sizing: border-box;
 }
@@ -177,8 +177,6 @@ p {
 
 }
 
-
-
 .section--1 {
     @include flex-column();
     @include section-gen();
@@ -234,6 +232,97 @@ p {
 
 
 }
+
+
+.main-section {
+    @include section-gen();
+    margin-top: 24px;
+    padding: 40px 24px;
+    text-align: left;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 24px;
+    }
+
+    article {
+        margin-top: 35px;
+        padding: 24px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        
+        h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+
+        .section-title--span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #3CB3AB;
+        }
+
+        p {
+            margin-top: 24px;
+        }
+
+        .article-footer {
+            margin-top: 25px;
+            @include flex-column();
+            align-items: start;
+            gap: 25px;
+
+            strong {
+                font-size: 32px;
+                font-weight: 700;
+                color: #000000;
+                position: relative;
+            }
+
+            strong:after {
+                content: "Left";
+                font-size: 15px;
+                font-weight: 400;
+                color: #7A7A7A;
+                position: absolute;
+                top: 50%;
+                right: -40px;
+                transform: translateY(-50%);
+            }
+
+            button {
+                @include button-gen(); 
+                width: 157px;
+                height: 48px;
+            }
+
+        }
+
+        
+    }
+
+    .out-of-stock {
+        opacity: 0.5;
+
+        button {
+            background-color: #7A7A7A !important;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
 
 
 

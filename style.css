@@ -68,7 +68,7 @@ p {
     width: calc(100% - 48px);
     margin: auto;
     background-color: #FFF;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     box-sizing: border-box;
     left: 24px;
@@ -100,7 +100,7 @@ p {
         margin-top: 24px; }
         .header .absolute-div--header article .btn-bookmark button {
           background-color: #3CB3AB;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 700;
           color: #FFF;
           border: none;
@@ -117,7 +117,7 @@ p {
   width: calc(100% - 48px);
   margin: auto;
   background-color: #FFF;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   box-sizing: border-box;
   gap: 25px;
@@ -156,6 +156,73 @@ p {
       background-color: #3CB3AB;
       border-radius: 33px;
       left: 0; }
+
+.main-section {
+  width: calc(100% - 48px);
+  margin: auto;
+  background-color: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 24px;
+  padding: 40px 24px;
+  text-align: left; }
+  .main-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 24px; }
+  .main-section article {
+    margin-top: 35px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15); }
+    .main-section article h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 8px; }
+    .main-section article .section-title--span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #3CB3AB; }
+    .main-section article p {
+      margin-top: 24px; }
+    .main-section article .article-footer {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-items: start;
+      gap: 25px; }
+      .main-section article .article-footer strong {
+        font-size: 32px;
+        font-weight: 700;
+        color: #000000;
+        position: relative; }
+      .main-section article .article-footer strong:after {
+        content: "Left";
+        font-size: 15px;
+        font-weight: 400;
+        color: #7A7A7A;
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        transform: translateY(-50%); }
+      .main-section article .article-footer button {
+        background-color: #3CB3AB;
+        font-size: 14px;
+        font-weight: 700;
+        color: #FFF;
+        border: none;
+        border-radius: 33px;
+        width: 157px;
+        height: 48px; }
+  .main-section .out-of-stock {
+    opacity: 0.5; }
+    .main-section .out-of-stock button {
+      background-color: #7A7A7A !important; }
 
 .open-navigation {
   animation-name: moveInLeft;
