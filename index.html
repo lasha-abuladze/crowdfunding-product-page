@@ -142,7 +142,7 @@
 
             <div class="article-footer">
                 <strong>101</strong>
-                <button>Select Reward</button>
+                <button class="select-reward">Select Reward</button>
             </div>
 
 
@@ -164,7 +164,7 @@
 
             <div class="article-footer">
                 <strong>64</strong>
-                <button>Select Reward</button>
+                <button class="select-reward">Select Reward</button>
             </div>
 
         </article>
@@ -193,14 +193,14 @@
 
     </main>
 
-    <section class="reward-section">
+    <section class="reward-section display-none">
         
         <div class="reward-options">
 
             <div class="section-title">
                 <h2>Back this project</h2>
                 <button>
-                    <img src="./images/icon-close-modal.svg" alt="#">
+                    <img class="close-section--btn" src="./images/icon-close-modal.svg" alt="#">
                 </button>
             </div>
     
@@ -211,7 +211,10 @@
 
             <article>
                 <div class="reward-article--header">
-                    <input class="reward-input" type="radio" name="revard-input">
+                    <div class="rewards-input--div">
+                        <input id="without-reward" class="reward-input inStock-inp" type="radio" name="revard-input">
+                        <label class="inp-label" for="without-reward"></label>
+                    </div>
 
                     <div class="reward-article--title">
                         <h3>Pledge with no reward</h3>
@@ -227,7 +230,11 @@
 
             <article>
                 <div class="reward-article--header">
-                    <input class="reward-input" type="radio" name="revard-input">
+
+                    <div class="rewards-input--div">
+                        <input id="bamboo-stand" class="reward-input inStock-inp" type="radio" name="revard-input">
+                        <label class="inp-label" for="bamboo-stand"></label>
+                    </div>
 
                     <div class="reward-article--title">
                         <h3>Bamboo Stand</h3>
@@ -243,7 +250,7 @@
 
                 <strong>101</strong>
 
-                <div class="Enter-your-pledge">
+                <div class="Enter-your-pledge display-none">
 
                     <div class="border-line"></div>
 
@@ -263,7 +270,11 @@
 
             <article>
                 <div class="reward-article--header">
-                    <input class="reward-input" type="radio" name="revard-input">
+
+                    <div class="rewards-input--div">
+                        <input id="black-adition" class="reward-input inStock-inp" type="radio" name="revard-input">
+                        <label class="inp-label" for="black-adition"></label>
+                    </div>
 
                     <div class="reward-article--title">
                         <h3>Black Edition Stand</h3>
@@ -299,7 +310,11 @@
 
             <article class="out-of-stock">
                 <div class="reward-article--header">
-                    <input class="reward-input" type="radio" name="revard-input">
+
+                    <div class="rewards-input--div">
+                        <input id="special-adition" class="reward-input outOfStock-inp" type="radio" name="out-of-stock">
+                        <label class="inp-label" for="special-adition"></label>
+                    </div>
 
                     <div class="reward-article--title">
                         <h3>Mahogany Special Edition</h3>
