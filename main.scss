@@ -33,10 +33,19 @@ $mainFont: "Commissioner", sans-serif;
     box-sizing: border-box;
 }
 
+@mixin section-article {
+    margin-top: 35px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
 
 body {
     background-color: #FAFAFA;
     font-family: $mainFont;
+    position: relative;
     // height: 100vh;
 }
 
@@ -54,6 +63,7 @@ p {
     background-size: cover;
     background-position: top;
     position: relative;
+    z-index: 1;
 
     .header-background {
         width: 100%;
@@ -248,11 +258,7 @@ p {
     }
 
     article {
-        margin-top: 35px;
-        padding: 24px;
-        box-sizing: border-box;
-        border-radius: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
+        @include section-article();
         
         h3 {
             font-size: 14px;
@@ -306,16 +312,167 @@ p {
         
     }
 
-    .out-of-stock {
-        opacity: 0.5;
-
-        button {
-            background-color: #7A7A7A !important;
-        }
-    }
-
 }
 
+
+.reward-section {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding-top: 121px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+
+    .reward-options {
+        width: calc(100% - 48px);
+        margin: auto;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        background-color: #FFF;
+        padding: 32px 24px;
+        box-sizing: border-box;
+
+        .section-title {
+            @include flex-row();
+            justify-content: space-between;
+            margin-bottom: 24px;
+
+            button {
+                padding: 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        article {
+            margin-top: 24px;
+            padding: 24px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+
+            input {
+                margin: 0;
+            }
+
+            .reward-article--header {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 24px;
+
+                .reward-article--title {
+                    @include flex-column();
+                    align-items: start;
+                    gap: 8px;
+                                    
+                    h3 {
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #000;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #3CB3AB;
+                    }
+                }
+            }
+
+            strong {
+                font-size: 18px;
+                font-weight: 700;
+                color: #000;
+                margin-top: 24px;
+                display: block;
+            }
+
+            strong:after {
+                content: "left";
+                font-size: 15px;
+                font-weight: 400;
+                color: #7A7A7A;
+                margin-left: 8px;
+            }
+
+            .Enter-your-pledge {
+                margin-top: 24px;
+                @include flex-column();
+                gap: 16px;
+                padding: 24px;
+                padding-bottom: 0;
+                box-sizing: border-box;
+                position: relative;
+
+                .border-line {
+                    width: calc(100% + 48px);
+                    height: 1px;
+                    background-color: rgba(0, 0, 0, 0.15);
+                    position: absolute;
+                    top: 0;
+                }
+
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #7A7A7A;
+                }
+
+                .continue-div {
+                    @include flex-row();
+                    gap: 16px;
+
+                    input{ 
+                        width: 100px;
+                        height: 48px;
+                        border: 1px solid rgba(0, 0, 0, 0.15);
+                        border-radius: 33px;
+                        display: flex;
+                        padding-left: 41px;
+                        box-sizing: border-box;
+                        outline: none;
+                        position: relative;
+
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #000;
+                    }
+                    
+                    .input-div {
+
+                        position: relative;
+
+                        &::before {
+                            content: "$";
+                            position: absolute;
+                            z-index: 1;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 24px;
+                            font-size: 14px;
+                            font-weight: 700;
+                            color: rgba(0, 0, 0, 0.15);
+                        }
+                    }
+
+                    button {
+                        @include button-gen();
+                        width: 115px;
+                        height: 48px;
+                    }
+
+                    
+                }
+            }
+
+
+        }
+
+
+    }
+}
 
 
 
@@ -363,7 +520,14 @@ p {
 }
 
 
+.out-of-stock {
+    opacity: 0.5;
+
+    button {
+        background-color: #7A7A7A !important;
+    }
+}
 
 .display-none {
-    display: none;
+    display: none !important;
 }
