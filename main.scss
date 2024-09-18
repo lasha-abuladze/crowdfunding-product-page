@@ -529,6 +529,48 @@ p {
 }
 
 
+.section--thanks-for {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 143px 24px 0px 24px;
+    box-sizing: border-box;
+
+    article {
+        width: 100%;
+        height: fit-content;
+        background-color: #FFF;
+        text-align: center;
+        border-radius: 8px;
+        padding: 32px 24px 40px 24px;
+        box-sizing: border-box;
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin-bottom: 31px;
+        }
+
+        button {
+            @include button-gen();
+            width: 107px;
+            height: 48px;
+        }
+        
+    }
+}
+
+
+
 
 
 
