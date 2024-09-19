@@ -624,11 +624,7 @@ p {
 
 
 
-
-
-
 @media only screen and (min-width: 768px) {
-
 
     p {
         font-size: 16px;
@@ -854,4 +850,51 @@ p {
     }
     
     
+}
+
+@media only screen and (min-width: 1024px) {
+
+    @mixin section-gen {
+        max-width: 730px;
+    }
+
+    .header {
+        height: 400px;
+        background-image: url(./images/image-hero-desktop.jpg);
+    
+        .navigation {
+            max-width: 1110px;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);            
+            padding: 48px 24px 0px 24px;
+
+        }
+        
+        .absolute-div--header {
+            position: absolute;
+            @include section-gen();
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -37%;    
+        }
+    
+    }
+
+    .section--1 {
+        @include section-gen();       
+    
+    }
+
+    .main-section {
+        @include section-gen();    
+    }
+
+    .reward-section {    
+        .reward-options {
+            @include section-gen();   
+    
+        }
+    }
+
 }

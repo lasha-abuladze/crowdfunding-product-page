@@ -598,3 +598,26 @@ p {
   .section--thanks-for article {
     width: 540px;
     margin: auto; } }
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    height: 400px;
+    background-image: url(./images/image-hero-desktop.jpg); }
+    .header .navigation {
+      max-width: 1110px;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 48px 24px 0px 24px; }
+    .header .absolute-div--header {
+      position: absolute;
+      max-width: 730px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -37%; }
+  .section--1 {
+    max-width: 730px; }
+  .main-section {
+    max-width: 730px; }
+  .reward-section .reward-options {
+    max-width: 730px; } }
