@@ -1,7 +1,8 @@
 `use strict`;
 
+const body = document.getElementsByTagName(`body`)
 
-
+const header = document.querySelector(`.header`)
 const closeOpenMenu = document.querySelector(`.close-open--btn`);
 const navigationUl = document.querySelector(`.navigation--ul`);
 const mainSection = document.querySelector(`.main-section`);
@@ -17,9 +18,41 @@ const darckBackround = document.querySelector(`.opened-menu--background`);
 
 
 
+
+const disableScrolling = function() {
+    document.body.style.overflow = `hidden`
+}
+
+const enableScrolling = function() {
+    document.body.style.overflow = `auto`
+}
+
+const scrollToTop = function() {
+    window.scrollTo(
+        {
+            left: header.left + window.pageXOffset,
+            top: header.top + window.pageYOffset,
+            behavior: `smooth`,
+        }
+    )
+}
+
+const reset = function() {
+    enterPledgeArr.forEach(el => el.classList.add(`display-none`));
+    inStockInputsArr.forEach(el => el.checked = false);
+    Array.from(document.querySelectorAll(`.pledge-amount`)).forEach(el => {
+        el.value = ``;
+    })
+}
+
 const changeMenuBtn = function(menuBtn) {
     menuBtn.forEach(el => el.classList.toggle(`display-none`));
     darckBackround.classList.toggle(`display-none`)
+}
+
+const thanksFor = function() {
+    sectionThanksFor.classList.remove(`display-none`);
+    rewardsSection.classList.add(`display-none`);
 }
 
 
@@ -28,6 +61,7 @@ closeOpenMenu.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`burgermenu`)) {       
         changeMenuBtn(menuBtn);
 
+        disableScrolling(body)
         navigationUl.classList.remove(`close-navigation`);
         navigationUl.classList.add(`open-navigation`);
     }
@@ -35,6 +69,7 @@ closeOpenMenu.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`close-btn`)) {
         changeMenuBtn(menuBtn);
 
+        enableScrolling(body)
         navigationUl.classList.remove(`open-navigation`);
         navigationUl.classList.add(`close-navigation`);
     }
@@ -47,13 +82,15 @@ mainSection.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`select-reward`)) {
         rewardsSection.classList.remove(`display-none`)
     }
+
+    scrollToTop(header);
 })
 
 rewardsSection.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`close-section--btn`)) {
         rewardsSection.classList.add(`display-none`);
-        enterPledgeArr.forEach(el => el.classList.add(`display-none`));
-        inStockInputsArr.forEach(el => el.checked = false)
+        reset();
+        
     }
 })
 
@@ -64,6 +101,9 @@ rewardOptions.addEventListener(`click`, (e) => {
         enterPledgeArr.forEach(el => el.classList.add(`display-none`));
         const articlePerent = e.target.parentElement.parentElement.parentElement
         const enterPledge = articlePerent.querySelector(`.Enter-your-pledge `)
+        Array.from(document.querySelectorAll(`.pledge-amount`)).forEach(el => {
+            el.value = ``;
+        })
 
         if(enterPledge) {
             enterPledge.classList.remove(`display-none`)
@@ -83,18 +123,15 @@ rewardOptions.addEventListener(`click`, (e) => {
             if(pledgeAmount !== ``) {
 
                 if(pledgeAmount.value >= Number(minPledge.textContent)) {
-                    sectionThanksFor.classList.remove(`display-none`);
-                    rewardsSection.classList.add(`display-none`)
-                    enterPledgeArr.forEach(el => el.classList.add(`display-none`));
-                    inStockInputsArr.forEach(el => el.checked = false)
+                    thanksFor();                    
+                    scrollToTop();
+                    disableScrolling();
                 } else {
                     console.log(`by`)
                 }
             } else {
-                sectionThanksFor.classList.remove(`display-none`);
-                rewardsSection.classList.add(`display-none`)
-                enterPledgeArr.forEach(el => el.classList.add(`display-none`));
-                inStockInputsArr.forEach(el => el.checked = false)
+                thanksFor();
+                scrollToTop();
             }
         })
 
@@ -105,4 +142,6 @@ rewardOptions.addEventListener(`click`, (e) => {
 
 gotIt.addEventListener(`click`, () => {
     sectionThanksFor.classList.add(`display-none`);
+    reset();
+    enableScrolling();
 })

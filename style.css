@@ -107,6 +107,7 @@ p {
           color: #FFF;
           border: none;
           border-radius: 33px;
+          cursor: pointer;
           min-width: 214px;
           height: 56px; }
       .header .absolute-div--header article .bookmark-span {
@@ -219,6 +220,7 @@ p {
         color: #FFF;
         border: none;
         border-radius: 33px;
+        cursor: pointer;
         width: 157px;
         height: 48px; }
 
@@ -380,6 +382,7 @@ p {
             color: #FFF;
             border: none;
             border-radius: 33px;
+            cursor: pointer;
             width: 115px;
             height: 48px; }
 
@@ -415,6 +418,7 @@ p {
       color: #FFF;
       border: none;
       border-radius: 33px;
+      cursor: pointer;
       width: 107px;
       height: 48px; }
 
