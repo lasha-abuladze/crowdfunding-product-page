@@ -23,6 +23,11 @@ $mainFont: "Commissioner", sans-serif;
     border: none;
     border-radius: 33px; 
     cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: #147A73;
+    }
 }
 
 @mixin section-gen {
@@ -361,11 +366,16 @@ p {
             border-radius: 8px;
             border: 1px solid rgba(0, 0, 0, 0.15);
 
+            .continue-btn {
+                @include button-gen();
+                width: 107px;
+                height: 48px;
+            }
+ 
 
 
             .rewards-input--div {
                 position: relative;
-                // background-color: red;
                 height: fit-content;
                 
                 .reward-input {
@@ -426,6 +436,12 @@ p {
                         font-size: 14px;
                         font-weight: 700;
                         color: #000;
+                        transition: all 0.2s;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #3CB3AB;
+                        }
                     }
 
                     span {
@@ -589,6 +605,16 @@ p {
     animation-fill-mode: forwards;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 
 
 
@@ -607,6 +633,10 @@ p {
     } to {
         transform: translateX((calc(100% + 24px)));
     }
+}
+
+.active-border {
+    border: 2px solid #3CB3AB !important;
 }
 
 
@@ -836,6 +866,10 @@ p {
                     padding-top: 24px;
     
                 }    
+
+                .border-line {
+                    width: 100% !important;
+                }
     
             }    
     

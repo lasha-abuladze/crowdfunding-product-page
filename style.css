@@ -108,8 +108,11 @@ p {
           border: none;
           border-radius: 33px;
           cursor: pointer;
+          transition: all 0.2s;
           min-width: 214px;
           height: 56px; }
+          .header .absolute-div--header article .btn-bookmark button:hover {
+            background-color: #147A73; }
       .header .absolute-div--header article .bookmark-span {
         display: none; }
 
@@ -221,8 +224,11 @@ p {
         border: none;
         border-radius: 33px;
         cursor: pointer;
+        transition: all 0.2s;
         width: 157px;
         height: 48px; }
+        .main-section article .article-footer button:hover {
+          background-color: #147A73; }
 
 .reward-section {
   width: 100%;
@@ -262,6 +268,19 @@ p {
       box-sizing: border-box;
       border-radius: 8px;
       border: 1px solid rgba(0, 0, 0, 0.15); }
+      .reward-section .reward-options article .continue-btn {
+        background-color: #3CB3AB;
+        font-size: 14px;
+        font-weight: 700;
+        color: #FFF;
+        border: none;
+        border-radius: 33px;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 107px;
+        height: 48px; }
+        .reward-section .reward-options article .continue-btn:hover {
+          background-color: #147A73; }
       .reward-section .reward-options article .rewards-input--div {
         position: relative;
         height: fit-content; }
@@ -308,7 +327,11 @@ p {
           .reward-section .reward-options article .reward-article--header .reward-article--title h3 {
             font-size: 14px;
             font-weight: 700;
-            color: #000; }
+            color: #000;
+            transition: all 0.2s;
+            cursor: pointer; }
+            .reward-section .reward-options article .reward-article--header .reward-article--title h3:hover {
+              color: #3CB3AB; }
           .reward-section .reward-options article .reward-article--header .reward-article--title span {
             font-size: 14px;
             font-weight: 500;
@@ -383,8 +406,11 @@ p {
             border: none;
             border-radius: 33px;
             cursor: pointer;
+            transition: all 0.2s;
             width: 115px;
             height: 48px; }
+            .reward-section .reward-options article .Enter-your-pledge .continue-div button:hover {
+              background-color: #147A73; }
 
 .section--thanks-for {
   position: absolute;
@@ -419,8 +445,11 @@ p {
       border: none;
       border-radius: 33px;
       cursor: pointer;
+      transition: all 0.2s;
       width: 107px;
       height: 48px; }
+      .section--thanks-for article button:hover {
+        background-color: #147A73; }
 
 .open-navigation {
   animation-name: moveInLeft;
@@ -431,6 +460,14 @@ p {
   animation-name: moveInRight;
   animation-duration: 1.5s;
   animation-fill-mode: forwards; }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
 
 @keyframes moveInLeft {
   from {
@@ -443,6 +480,9 @@ p {
     transform: translateX(0px); }
   to {
     transform: translateX(calc(100% + 24px)); } }
+
+.active-border {
+  border: 2px solid #3CB3AB !important; }
 
 .out-of-stock {
   opacity: 0.5; }
@@ -501,8 +541,11 @@ p {
         border: none;
         border-radius: 33px;
         cursor: pointer;
+        transition: all 0.2s;
         min-width: 214px;
         height: 56px; }
+        .header .absolute-div--header article .btn-bookmark button:hover {
+          background-color: #147A73; }
     .header .absolute-div--header article .bookmark {
       position: relative;
       cursor: pointer; }
@@ -595,6 +638,8 @@ p {
       justify-content: space-between;
       padding: 0px;
       padding-top: 24px; }
+    .reward-section .reward-options article .border-line {
+      width: 100% !important; }
   .section--thanks-for article {
     width: 540px;
     margin: auto; } }

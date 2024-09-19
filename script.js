@@ -8,6 +8,7 @@ const navigationUl = document.querySelector(`.navigation--ul`);
 const mainSection = document.querySelector(`.main-section`);
 const rewardsSection = document.querySelector(`.reward-section`);
 const rewardOptions = document.querySelector(`.reward-options`);
+const rewardsArticleArr = document.querySelectorAll(`.rewards-article`)
 const enterPledgeArr = document.querySelectorAll(`.Enter-your-pledge`);
 const inStockInputsArr = document.querySelectorAll(`.inStock-inp`);
 const sectionThanksFor = document.querySelector(`.section--thanks-for`);
@@ -88,6 +89,7 @@ mainSection.addEventListener(`click`, (e) => {
 
 rewardsSection.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`close-section--btn`)) {
+        rewardsArticleArr.forEach(el => el.classList.remove(`active-border`))
         rewardsSection.classList.add(`display-none`);
         reset();
         
@@ -98,9 +100,14 @@ rewardsSection.addEventListener(`click`, (e) => {
 rewardOptions.addEventListener(`click`, (e) => {
     if(e.target.classList.contains(`inStock-inp`)) {
 
+        rewardsArticleArr.forEach(el => el.classList.remove(`active-border`))
+
         enterPledgeArr.forEach(el => el.classList.add(`display-none`));
         const articlePerent = e.target.parentElement.parentElement.parentElement
-        const enterPledge = articlePerent.querySelector(`.Enter-your-pledge `)
+        const enterPledge = articlePerent.querySelector(`.Enter-your-pledge `);
+        
+        articlePerent.classList.add(`active-border`)
+
         Array.from(document.querySelectorAll(`.pledge-amount`)).forEach(el => {
             el.value = ``;
         })
@@ -123,6 +130,7 @@ rewardOptions.addEventListener(`click`, (e) => {
             if(pledgeAmount !== ``) {
 
                 if(pledgeAmount.value >= Number(minPledge.textContent)) {
+                    rewardsArticleArr.forEach(el => el.classList.remove(`active-border`));
                     thanksFor();                    
                     scrollToTop();
                     disableScrolling();
@@ -130,6 +138,7 @@ rewardOptions.addEventListener(`click`, (e) => {
                     console.log(`by`)
                 }
             } else {
+                rewardsArticleArr.forEach(el => el.classList.remove(`active-border`));
                 thanksFor();
                 scrollToTop();
             }
@@ -141,6 +150,7 @@ rewardOptions.addEventListener(`click`, (e) => {
 })
 
 gotIt.addEventListener(`click`, () => {
+    rewardsArticleArr.forEach(el => el.classList.remove(`active-border`))
     sectionThanksFor.classList.add(`display-none`);
     reset();
     enableScrolling();
