@@ -577,13 +577,6 @@ p {
 
 
 
-
-
-
-
-
-
-
 .open-navigation {
     animation-name: moveInLeft;
     animation-duration: 1.5s;
@@ -627,4 +620,238 @@ p {
 
 .display-none {
     display: none !important;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+
+
+    p {
+        font-size: 16px;
+    }
+
+    .header {
+    
+        .navigation {            
+            padding: 32px 24px 0px 24px;
+            box-sizing: border-box;
+    
+            .navigation--ul {
+                position: static;
+                background: none;        
+                transform: translateX(0);
+                @include flex-row(); 
+                gap: 32px;               
+                width: fit-content;
+
+
+                li {
+                    padding: 0;
+                    border: none;
+    
+                    &:last-child {
+                        border: none;
+                    }
+    
+                    a {
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: #FFF;
+                    }
+                }
+    
+            }
+
+            .close-open--btn {
+                display: none;
+            }
+        }
+
+        .absolute-div--header {
+            left: 24px;
+            bottom: -60%;
+    
+            article {
+    
+                h1 {
+                    font-size: 28px;
+    
+                    span {
+                        display: inline;
+                    }
+                }
+    
+                p {
+                    margin-top: 16px;
+                }
+    
+                .btn-bookmark {
+                    @include flex-row();
+                    justify-content: space-between;
+                    margin-top: 24px;
+    
+                    button {
+                        @include button-gen();
+                        min-width: 214px;
+                        height: 56px;
+                    }
+                }
+    
+                .bookmark {
+
+                    position: relative;
+                    cursor: pointer;
+
+                    img {
+                        position: absolute;
+                        left: 0;
+                        height: 100%;
+                    }
+
+                    .bookmark-span {
+                        display: block;
+                        width: 174px;
+                        padding: 18px 0px;
+                        padding-left: 72px;
+                        padding-right: 24px;
+                        box-sizing: border-box;
+                        background-color: rgba(47, 47, 47, 0.1);
+                        color: #7A7A7A;
+                        border-radius: 33px;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                }
+    
+            }
+    
+        }
+    
+    }
+
+    .section--1 {
+        gap: 25px;
+    
+        margin: auto;
+        margin-top: 200px;
+
+        .results-in-numbers {
+            @include flex-row();
+            width: 100%;
+
+            .xxx {
+                @include flex-column();
+                position: relative;
+                padding-left: 47px;
+                padding-right: 94px;
+                box-sizing: border-box;
+                height: 100%;
+
+                &:first-child {
+                    .underline {
+                        display: none;
+                    }
+                }
+
+
+
+                &:first-child {
+                    padding: 0;
+                    padding-right: 47px;
+                }
+        
+                .underline {
+
+                    &:first-child {
+                        display: none !important;
+                    }
+
+                    margin-top: 0px;
+                    width: 1px;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.15);
+                    left: 0;
+                    position: absolute;    
+                    top: 0;
+                }
+            }
+        }    
+    
+    }
+
+    .main-section {
+    
+        article {
+            @include section-article();
+            
+            .article-title {
+                @include flex-row();
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    margin-bottom: 0px;
+                }
+            }
+    
+            .article-footer {
+                margin-top: 25px;
+                @include flex-row();
+                justify-content: space-between;
+                align-items: center;    
+            }
+    
+            
+        }
+    
+    }
+
+    .reward-section {
+    
+        .reward-options {
+
+            article {
+
+                position: relative;
+                padding: 32px;
+    
+    
+                .rewards-input--div {
+                    position: relative;
+                    height: fit-content;
+                }
+    
+                strong {
+                    top: 32px;
+                    right: 28px;                    
+                    margin-top: 0px;
+                    position: absolute;
+                }
+    
+                .Enter-your-pledge {
+                    margin-top: 32px;
+                    @include flex-row();
+                    justify-content: space-between;
+                    padding: 0px;
+                    padding-top: 24px;
+    
+                }    
+    
+            }    
+    
+        }
+    }
+
+    .section--thanks-for {    
+        article {
+            width: 540px;
+            margin: auto;            
+        }
+    }
+    
+    
 }
